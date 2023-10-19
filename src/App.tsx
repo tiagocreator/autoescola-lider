@@ -4,8 +4,6 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { Home, About, Services, Reviews, Contact } from './pages';
 import { Navbar } from './components';
 
-import './App.css';
-
 function App() {
   return (
     <ChakraProvider>

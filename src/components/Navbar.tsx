@@ -1,6 +1,4 @@
 import { Link as ReactLink } from 'react-router-dom';
-import { Link as ChakraLink } from '@chakra-ui/react';
-
 import {
   Box,
   Button,
@@ -11,6 +9,7 @@ import {
   VStack,
   useDisclosure,
   chakra,
+  Link as ChakraLink,
 } from '@chakra-ui/react';
 
 import { AiOutlineMenu } from 'react-icons/ai';

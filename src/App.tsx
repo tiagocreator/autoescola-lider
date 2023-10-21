@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 
 import { Home, About, Services, Reviews, Contact } from './pages';
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path='/avaliacoes' element={<Reviews />} />
           <Route path='/contato' element={<Contact />} />
         </Routes>
+        <Footer />
       </Router>
     </ChakraProvider>
   );

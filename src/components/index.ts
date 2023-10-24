@@ -6,3 +6,4 @@ export { default as Cta } from './Cta';
 export { default as Footer } from './Footer';
 export { default as Hero } from './Hero';
 export { default as CompanyInfo } from './CompanyInfo';
+export { default as AllServices } from './AllServices';

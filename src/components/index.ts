@@ -7,3 +7,6 @@ export { default as Footer } from './Footer';
 export { default as Hero } from './Hero';
 export { default as CompanyInfo } from './CompanyInfo';
 export { default as AllServices } from './AllServices';
+export { default as AllReviews } from './AllReviews';
+export { default as ServiceBox } from './ServiceBox';
+export { default as Stars } from './Stars';

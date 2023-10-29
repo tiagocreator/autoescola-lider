@@ -8,9 +8,11 @@ const carCategory: string = require('../assets/img/car-cat.png');
 const dualCategory: string = require('../assets/img/dual-cat.png');
 
 const Categories = () => {
+  const brand: string = '#f4c827';
+
   return (
-    <Flex bg='#f4c827' p={5} w='full' justifyContent='center' alignItems='center'>
-      <Box w='full' pt={8}>
+    <Flex bg='gray.50' p={5} w='full' justifyContent='center' alignItems='center'>
+      <Box w='full' pt={6} pb={3}>
         <Flex
           direction={{
             base: 'column',
@@ -21,6 +23,7 @@ const Categories = () => {
             base: 6,
             sm: 0,
           }}>
+          {/* A */}
           <Flex
             flex={{
               sm: 1,
@@ -76,8 +79,8 @@ const Categories = () => {
                   loading='lazy'
                   m='auto'
                 />
-                <chakra.p fontSize='2xl' m='auto'>
-                  Sua Liberdade Sobre Duas Rodas
+                <chakra.p fontSize='2xl' m='auto' textShadow='1px 0 currentcolor'>
+                  Liberdade Sobre Duas Rodas
                 </chakra.p>
                 <Feature>Motocicletas, motonetas e ciclomotores</Feature>
                 <Feature>Domine as habilidades de pilotagem</Feature>
@@ -97,10 +100,10 @@ const Categories = () => {
                   border='solid transparent'
                   fontWeight='bold'
                   rounded='md'
-                  color='brand.600'
-                  bg='white'
+                  color='white'
+                  bg='gray.900'
                   _hover={{
-                    bg: 'brand.50',
+                    bg: `${brand}`,
                   }}
                   cursor='pointer'>
                   Entre Em Contato{' '}
@@ -108,7 +111,7 @@ const Categories = () => {
               </Box>
             </VStack>
           </Flex>
-
+          {/* AB */}
           <Flex
             flex={{
               base: 1,
@@ -161,9 +164,10 @@ const Categories = () => {
                   loading='lazy'
                   m='auto'
                 />
-                <chakra.p fontSize='2xl' m='auto'>
+                <chakra.p fontSize='2xl' m='auto' textShadow='1px 0 currentcolor'>
                   Versatilidade no Trânsito
                 </chakra.p>
+                <Feature>A melhor escolha com descontos especiais</Feature>
                 <Feature>Aprenda a pilotar motos e dirigir carros com segurança</Feature>
                 <Feature>Prepare-se para a liberdade de escolha no trânsito</Feature>
               </VStack>
@@ -181,12 +185,10 @@ const Categories = () => {
                   fontWeight='bold'
                   fontSize='md'
                   rounded='md'
-                  _light={{
-                    color: 'black',
-                  }}
-                  bg='brand.600'
+                  color='white'
+                  bg='gray.900'
                   _hover={{
-                    bg: 'brand.700',
+                    bg: `${brand}`,
                   }}
                   cursor='pointer'>
                   Entre Em Contato
@@ -194,7 +196,7 @@ const Categories = () => {
               </Box>
             </VStack>
           </Flex>
-
+          {/* B */}
           <Flex
             flex={{
               sm: 1,
@@ -250,7 +252,7 @@ const Categories = () => {
                   loading='lazy'
                   m='auto'
                 />
-                <chakra.p fontSize='2xl' m='auto'>
+                <chakra.p fontSize='2xl' m='auto' textShadow='1px 0 currentcolor'>
                   Conduza com Confiança
                 </chakra.p>
                 <Feature>Aprenda as habilidades de direção necessárias</Feature>
@@ -270,11 +272,11 @@ const Categories = () => {
                   border='solid transparent'
                   fontWeight='bold'
                   rounded='md'
-                  color='brand.600'
                   fontSize='md'
-                  bg='white'
+                  color='white'
+                  bg='gray.900'
                   _hover={{
-                    bg: 'brand.50',
+                    bg: `${brand}`,
                   }}
                   cursor='pointer'>
                   Entre Em Contato

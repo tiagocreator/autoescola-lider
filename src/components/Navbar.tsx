@@ -10,12 +10,16 @@ import {
   useDisclosure,
   chakra,
   Link as ChakraLink,
+  Image,
 } from '@chakra-ui/react';
 
 import { AiOutlineMenu } from 'react-icons/ai';
 
+const logo: string = require('../assets/img/logo.png');
+
 const Navbar = () => {
-  const bg = 'white';
+  const bg = '#fff';
+  const text = 'gray.900';
   const mobileNav = useDisclosure();
 
   return (
@@ -31,26 +35,28 @@ const Navbar = () => {
       position='relative'
       zIndex={1}>
       <Flex alignItems='center' justifyContent='space-between' mx='auto'>
-        <Flex>
+        <Flex alignItems='center' justifyContent='space-between'>
           <ChakraLink
             as={ReactLink}
             to='/'
             title='Página Inicial'
             display='flex'
             alignItems='center'>
-            {/* <Logo /> */}
-          </ChakraLink>
-          <ChakraLink as={ReactLink} to='/'>
-            <chakra.h1 fontSize='xl' fontWeight='medium' ml='2'>
-              Autoescola Lider
-            </chakra.h1>
+            <Image
+              src={logo}
+              alt='logo'
+              h={{ base: 8, md: 12 }}
+              fit='cover'
+              loading='lazy'
+              m='auto'
+            />
           </ChakraLink>
         </Flex>
         <HStack display='flex' alignItems='center' spacing={1}>
           <HStack
             spacing={1}
             mr={1}
-            color='brand.500'
+            color={text}
             display={{
               base: 'none',
               md: 'inline-flex',
@@ -82,8 +88,8 @@ const Navbar = () => {
                 md: 'none',
               }}
               aria-label='abrir menu'
-              fontSize='20px'
-              color='gray.800'
+              fontSize='25px'
+              color={text}
               variant='ghost'
               icon={<AiOutlineMenu />}
               onClick={mobileNav.onOpen}
@@ -103,7 +109,7 @@ const Navbar = () => {
               spacing={3}
               rounded='sm'
               shadow='sm'>
-              <CloseButton aria-label='fechar menu' onClick={mobileNav.onClose} />
+              <CloseButton aria-label='fechar menu' onClick={mobileNav.onClose} fontSize='18px' />
 
               <ChakraLink as={ReactLink} to='/'>
                 <Button w='full' variant='ghost'>

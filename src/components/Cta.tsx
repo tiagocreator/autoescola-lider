@@ -3,9 +3,11 @@ import { Box, Flex, Icon, Image, Link as ChakraLink, SimpleGrid, chakra } from '
 
 import { FiExternalLink } from 'react-icons/fi';
 
-const placeholderBg: string = require('../assets/img/orange-bg.jpg');
+const ctaBg: string = require('../assets/img/cta-bg.jpg');
 
 const Cta = () => {
+  const brand: string = '#f4c827';
+
   return (
     <SimpleGrid
       columns={{
@@ -13,9 +15,9 @@ const Cta = () => {
         md: 2,
       }}
       spacing={0}>
-      <Flex bg='brand.400'>
+      <Flex bg='white'>
         <Image
-          src={placeholderBg}
+          src={ctaBg}
           alt=''
           fit='cover'
           w='full'
@@ -38,7 +40,7 @@ const Cta = () => {
         py={24}
         zIndex={3}>
         <chakra.span
-          color='brand.600'
+          color='gray.800'
           fontSize='lg'
           textTransform='uppercase'
           fontWeight='extrabold'>
@@ -52,7 +54,7 @@ const Cta = () => {
             lg: '5xl',
           }}
           fontWeight='bold'
-          color='brand.600'
+          color='gray.900'
           lineHeight='shorter'
           textShadow='2px 0 currentcolor'>
           Conquiste sua Habilitação
@@ -63,12 +65,14 @@ const Cta = () => {
             lg: 16,
           }}
           mb={4}
-          fontSize='lg'
-          color='brand.600'
-          letterSpacing='wider'>
+          fontSize={{
+            sm: 'lg',
+            md: 'xl',
+          }}
+          color='gray.800'>
           A Autoescola Lider oferece horários flexíveis para aulas teóricas e práticas. Adaptamos
           nosso treinamento às suas necessidades, tornando o aprendizado agradável e sem estresse.
-          Aprenda a dirigir de forma conveniente e se torne um motorista confiante.
+          Aprenda a dirigir de forma conveniente, vença a baliza e se torne um motorista confiante.
         </chakra.p>
         <Box display='inline-flex' rounded='md' shadow='md'>
           <ChakraLink
@@ -84,15 +88,13 @@ const Cta = () => {
             fontWeight='bold'
             w='full'
             rounded='md'
-            _light={{
-              color: 'black',
-            }}
             fontSize='md'
-            bg='brand.600'
+            color='gray.900'
+            bg='gray.100'
             _hover={{
-              bg: 'brand.700',
+              color: `${brand}`,
             }}>
-            Entre em Contato
+            Converse Conosco
             <Icon as={FiExternalLink} ml={2} />
           </ChakraLink>
         </Box>

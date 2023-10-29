@@ -11,3 +11,4 @@ export { default as AllReviews } from './AllReviews';
 export { default as ServiceBox } from './ServiceBox';
 export { default as Stars } from './Stars';
 export { default as ContactForm } from './ContactForm';
+export { default as GMap } from './GMap';

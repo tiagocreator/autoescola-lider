@@ -1,13 +1,13 @@
 import { Link as ReactLink } from 'react-router-dom';
 import { chakra, Box, Image, Icon, Link as ChakraLink } from '@chakra-ui/react';
 
-const placeholderBg: string = require('../assets/img/orange-bg.jpg');
+const mainHeroBg: string = require('../assets/img/main-hero-bg.jpg');
 
 const MainHero = () => {
-  const bg = 'white';
+  const brand: string = '#f4c827';
 
   return (
-    <Box pos='relative' overflow='hidden' bg={bg} zIndex={-1}>
+    <Box pos='relative' overflow='hidden' bg='white' zIndex={1}>
       <Box maxW='7xl' mx='auto'>
         <Box
           pos='relative'
@@ -25,7 +25,7 @@ const MainHero = () => {
             lg: 'full',
           }}
           zIndex={1}
-          bg={bg}
+          bg='white'
           border='solid 1px transparent'>
           <Icon
             display={{
@@ -38,7 +38,7 @@ const MainHero = () => {
             bottom={0}
             h='full'
             w={48}
-            color={bg}
+            color='white'
             transform='translateX(50%)'
             fill='currentColor'
             viewBox='0 0 100 100'
@@ -94,8 +94,8 @@ const MainHero = () => {
                     xl: 'inline',
                   }}
                   letterSpacing={1.3}
-                  color='#f4c827'>
-                  aprovação
+                  color={brand}>
+                  habilitação
                 </chakra.span>
               </chakra.h1>
               <chakra.p
@@ -115,7 +115,7 @@ const MainHero = () => {
                   sm: 'auto',
                   lg: 0,
                 }}
-                color='gray.600'>
+                color='gray.800'>
                 Somos a Autoescola Lider de Colônia Leopoldina, dedicada a oferecer treinamento de
                 direção para carro e moto de alta qualidade e preparação para obter sua carteira de
                 motorista.
@@ -132,27 +132,26 @@ const MainHero = () => {
                   sm: 'center',
                   lg: 'start',
                 }}
-                fontWeight='normal'
-                fontFamily='fantasy'>
+                fontWeight='bold'>
                 <Box rounded='full' shadow='md'>
                   <ChakraLink
                     as={ReactLink}
-                    to='sobre'
+                    to='/sobre'
                     letterSpacing={1.1}
                     w='full'
                     display='flex'
                     alignItems='center'
                     justifyContent='center'
-                    border='solid 1px brand.900'
+                    border='solid 1px gray.900'
                     fontSize={{
                       base: 'md',
                       md: 'lg',
                     }}
                     rounded='md'
-                    color='brand.900'
-                    bg='white'
+                    color='gray.900'
+                    bg='gray.100'
                     _hover={{
-                      bg: 'brand.600',
+                      color: `${brand}`,
                     }}
                     px={{
                       base: 8,
@@ -169,7 +168,7 @@ const MainHero = () => {
                 <Box mt={[3, 0]} ml={[null, 3]}>
                   <ChakraLink
                     as={ReactLink}
-                    to='/contato'
+                    to='/servicos'
                     letterSpacing={1.1}
                     w='full'
                     display='flex'
@@ -183,19 +182,19 @@ const MainHero = () => {
                       base: 3,
                       md: 4,
                     }}
-                    border='solid 1px brand.900'
+                    border='solid 1px gray.900'
                     fontSize={{
                       base: 'md',
                       md: 'lg',
                     }}
                     rounded='md'
-                    color='white'
-                    bg='black'
+                    color={'#fff'}
+                    bg='gray.900'
                     _hover={{
-                      bg: 'brand.600',
+                      bg: `${brand}`,
                     }}
                     cursor='pointer'>
-                    Entre em Contato
+                    Nossos Serviços
                   </ChakraLink>
                 </Box>
               </Box>
@@ -224,7 +223,7 @@ const MainHero = () => {
           h={[56, 72, 96, 'full']}
           w='full'
           fit='cover'
-          src={placeholderBg}
+          src={mainHeroBg}
           alt=''
           loading='lazy'
         />

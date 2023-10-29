@@ -1,11 +1,10 @@
-import { Cta, Hero, ContactForm } from '../components';
+import { Hero, ContactForm } from '../components';
 
 const Contact = () => {
   return (
     <main>
       <Hero title={'Contato'} />
       <ContactForm />
-      <Cta />
     </main>
   );
 };

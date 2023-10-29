@@ -33,7 +33,7 @@ const Navbar = () => {
       py={6}
       shadow='md'
       position='relative'
-      zIndex={1}>
+      zIndex={2}>
       <Flex alignItems='center' justifyContent='space-between' mx='auto'>
         <Flex alignItems='center' justifyContent='space-between'>
           <ChakraLink

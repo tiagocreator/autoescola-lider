@@ -44,7 +44,7 @@ const Cta = () => {
           fontSize='lg'
           textTransform='uppercase'
           fontWeight='extrabold'>
-          Seu Sucesso é Nosso Objetivo
+          Destaque em Formação de Condutores
         </chakra.span>
         <chakra.h1
           mb={4}
@@ -57,7 +57,7 @@ const Cta = () => {
           color='gray.900'
           lineHeight='shorter'
           textShadow='2px 0 currentcolor'>
-          Conquiste sua Habilitação
+          Somos a Número 1
         </chakra.h1>
         <chakra.p
           pr={{

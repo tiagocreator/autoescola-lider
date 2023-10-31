@@ -10,13 +10,13 @@ const recycle: string = require('../assets/img/recycle.png');
 
 const AllServices = () => {
   return (
-    <Flex w='full' bg='#edf3f8' p={50} alignItems='center' justifyContent='center'>
-      <Box py='10px' px='10' bg='gray.100'>
+    <Flex w='full' bg='gray.50' p={50} alignItems='center' justifyContent='center'>
+      <Box py='10px' px='10' bg='gray.100' rounded='lg'>
         <Box w='full' px={{ base: 10, md: 4 }} mx='auto' textAlign='center'>
           <Text mb={2} fontSize={{ base: '4xl', md: '5xl' }} fontWeight='bold' lineHeight='tight'>
             Todos os Nossos Serviços
           </Text>
-          <chakra.p mb={6} fontSize={{ base: 'lg', md: 'xl' }} color='gray.600'>
+          <chakra.p mb={6} fontSize={{ base: 'lg', md: 'xl' }} color='gray.800'>
             Entre em Contato Agora e Saiba Mais
           </chakra.p>
         </Box>

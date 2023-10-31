@@ -10,15 +10,12 @@ interface Props {
   imgW: string;
 }
 
+const brand: string = '#f4c827';
+
 const ServiceBox: React.FC<Props> = (props) => {
   return (
     <Box rounded={['none', 'lg']} shadow={['none', 'md']} bg='white'>
-      <Flex
-        direction='column'
-        justify='space-between'
-        p='6'
-        borderBottomWidth='1px'
-        color='gray.200'>
+      <Flex direction='column' justify='space-between' p='6' borderBottomWidth='1px'>
         <chakra.p mb={1} fontSize='3xl' fontWeight='semibold' color='gray.900'>
           {props.title}
         </chakra.p>
@@ -28,7 +25,13 @@ const ServiceBox: React.FC<Props> = (props) => {
               R$:
             </chakra.span>
           )}
-          {props.price ? `${props.price}` : 'Entre em Contato'}
+          {props.price ? (
+            `${props.price}`
+          ) : (
+            <chakra.span fontWeight='medium' color='gray.600'>
+              Entre em Contato
+            </chakra.span>
+          )}
           {props.price && (
             <chakra.span fontSize='xl' fontWeight='medium' color='gray.600'>
               ,00
@@ -48,12 +51,10 @@ const ServiceBox: React.FC<Props> = (props) => {
           fontWeight='bold'
           rounded='md'
           shadow='md'
-          _light={{
-            color: 'black',
-          }}
-          bg='brand.600'
+          bg='gray.900'
+          color='white'
           _hover={{
-            bg: 'brand.700',
+            bg: `${brand}`,
           }}>
           Saiba Mais
         </ChakraLink>

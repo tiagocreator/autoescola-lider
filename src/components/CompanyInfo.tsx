@@ -8,7 +8,7 @@ const CompanyInfo = () => {
   const brand: string = '#f4c827';
 
   return (
-    <Flex bg='gray.100' p={5} w='full' justifyContent='center' alignItems='center'>
+    <Flex bg='gray.50' p={5} w='full' justifyContent='center' alignItems='center'>
       <Box shadow='xl' bg='white' px={8} py={20} mx='auto'>
         <SimpleGrid
           alignItems='center'

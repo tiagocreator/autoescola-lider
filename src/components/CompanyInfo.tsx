@@ -1,11 +1,14 @@
 import { Link as ReactLink } from 'react-router-dom';
 import { Box, Button, Flex, Image, SimpleGrid, chakra, Link as ChakraLink } from '@chakra-ui/react';
 
-const placeholderBg: string = require('../assets/img/orange-bg.jpg');
+const company: string = require('../assets/img/company.jpg');
+const students: string = require('../assets/img/students.jpg');
 
 const CompanyInfo = () => {
+  const brand: string = '#f4c827';
+
   return (
-    <Flex bg='#edf3f8' p={5} w='full' justifyContent='center' alignItems='center'>
+    <Flex bg='gray.100' p={5} w='full' justifyContent='center' alignItems='center'>
       <Box shadow='xl' bg='white' px={8} py={20} mx='auto'>
         <SimpleGrid
           alignItems='center'
@@ -40,7 +43,7 @@ const CompanyInfo = () => {
               lineHeight={{
                 md: 'shorter',
               }}>
-              Preparando Você para a Baliza
+              Somos a Lider
             </chakra.h2>
             <chakra.p
               mb={5}
@@ -48,7 +51,7 @@ const CompanyInfo = () => {
                 base: 'center',
                 sm: 'left',
               }}
-              color='gray.600'
+              color='gray.800'
               fontSize={{
                 md: 'lg',
               }}>
@@ -57,24 +60,24 @@ const CompanyInfo = () => {
               instrutores altamente qualificados e nossa abordagem profissional garantem que você
               receba a melhor educação de direção possível.
             </chakra.p>
-            <Button
-              w={{
-                base: 'full',
-                sm: 'auto',
-              }}
-              size='lg'
-              bg='gray.900'
-              _hover={{
-                bg: 'gray.700',
-              }}
-              color='gray.100'>
-              <ChakraLink as={ReactLink} to='/servicos'>
+            <ChakraLink as={ReactLink} to='/servicos'>
+              <Button
+                w={{
+                  base: 'full',
+                  sm: 'auto',
+                }}
+                size='lg'
+                bg='gray.900'
+                _hover={{
+                  bg: `${brand}`,
+                }}
+                color='white'>
                 Todos os Serviços
-              </ChakraLink>
-            </Button>
+              </Button>
+            </ChakraLink>
           </Box>
           <Box w='full' h='full'>
-            <Image src={placeholderBg} alt='' fit='cover' w='full' h={'full'} loading='lazy' />
+            <Image src={company} alt='' fit='cover' w='full' h={'full'} loading='lazy' />
           </Box>
         </SimpleGrid>
 
@@ -124,7 +127,7 @@ const CompanyInfo = () => {
                 base: 'center',
                 sm: 'left',
               }}
-              color='gray.600'
+              color='gray.800'
               fontSize={{
                 md: 'lg',
               }}>
@@ -134,24 +137,24 @@ const CompanyInfo = () => {
               Junte-se a nossa lista crescente de motoristas bem-sucedidos e permita-nos fazer parte
               da sua jornada para o sucesso nas estradas.
             </chakra.p>
-            <Button
-              w={{
-                base: 'full',
-                sm: 'auto',
-              }}
-              size='lg'
-              bg='gray.900'
-              _hover={{
-                bg: 'gray.700',
-              }}
-              color='gray.100'>
-              <ChakraLink as={ReactLink} to='/avaliacoes'>
+            <ChakraLink as={ReactLink} to='/avaliacoes'>
+              <Button
+                w={{
+                  base: 'full',
+                  sm: 'auto',
+                }}
+                size='lg'
+                bg='gray.900'
+                _hover={{
+                  bg: `${brand}`,
+                }}
+                color='white'>
                 Testemunhas
-              </ChakraLink>
-            </Button>
+              </Button>
+            </ChakraLink>
           </Box>
           <Box w='full' h='full'>
-            <Image src={placeholderBg} alt='' fit='cover' w='full' h={'full'} loading='lazy' />
+            <Image src={students} alt='' fit='cover' w='full' h={'full'} loading='lazy' />
           </Box>
         </SimpleGrid>
       </Box>

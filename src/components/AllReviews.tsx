@@ -94,13 +94,13 @@ const AllReviews: React.FC = () => {
   ];
 
   return (
-    <Flex w='full' bg='#edf3f8' p={50} alignItems='center' justifyContent='center'>
-      <Box py='10px' px='10' bg='gray.100'>
-        <Box w='full' px={{ base: 10, md: 4 }} mx='auto' textAlign='center'>
+    <Flex w='full' bg='gray.50' p={50} alignItems='center' justifyContent='center'>
+      <Box py='10px' px='10' bg='gray.100' rounded='lg'>
+        <Box w='full' px={{ base: 0, md: 10 }} mx='auto' textAlign='center'>
           <Text mb={2} fontSize={{ base: '4xl', md: '5xl' }} fontWeight='bold' lineHeight='tight'>
             Alunos Satisfeitos
           </Text>
-          <chakra.p mb={6} fontSize={{ base: 'lg', md: 'xl' }} color='gray.600'>
+          <chakra.p mb={6} fontSize={{ base: 'lg', md: 'xl' }} color='gray.800'>
             Conheça o que nossos alunos têm a dizer sobre sua experiência na Autoescola Lider.
             Nossos depoimentos refletem nosso compromisso com a formação de motoristas seguros e
             confiantes. Saiba como ajudamos outros a alcançar o sucesso na baliza e nas estradas.
@@ -111,7 +111,7 @@ const AllReviews: React.FC = () => {
             {data.map((item, index) => (
               <Flex
                 key={index}
-                bg='#edf3f8'
+                bg='gray.100'
                 p={'5px'}
                 w='full'
                 alignItems='center'
@@ -123,7 +123,7 @@ const AllReviews: React.FC = () => {
                     <chakra.p display='block'>
                       <Stars starH={'22px'} starW={'22px'} />
                     </chakra.p>
-                    <chakra.p px={'5px'} mt={'10px'} fontSize='sm' color='gray.700'>
+                    <chakra.p px={'5px'} mt={'10px'} fontSize='sm' color='gray.800'>
                       {item.description}
                     </chakra.p>
                   </Box>

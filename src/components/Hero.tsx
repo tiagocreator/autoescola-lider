@@ -1,6 +1,6 @@
 import { Stack, Flex, Text, VStack, useBreakpointValue } from '@chakra-ui/react';
 
-const placeholderBg: string = require('../assets/img/orange-bg.jpg');
+const heroBg: string = require('../assets/img/hero-bg.jpg');
 
 interface Props {
   title: string;
@@ -11,13 +11,12 @@ const Hero: React.FC<Props> = (props) => {
     <Flex
       w={'full'}
       h={{ base: '30vh', md: '40vh' }}
-      backgroundImage={placeholderBg}
-      backgroundSize={'cover'}
+      backgroundImage={heroBg}
       backgroundPosition={'center center'}>
       <VStack
         w={'full'}
         justify={'center'}
-        bgGradient={'linear(to-r, blackAlpha.700, blackAlpha.500)'}>
+        bgGradient={'linear(to-r, blackAlpha.800, blackAlpha.600)'}>
         <Stack margin={'auto'} maxW={'full'} align={'flex-center'}>
           <Text
             color={'white'}

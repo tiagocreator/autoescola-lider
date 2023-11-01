@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+
 import { Link as ReactLink } from 'react-router-dom';
 import {
   Container,
@@ -17,53 +19,147 @@ import {
   Textarea,
   SimpleGrid,
   Link as ChakraLink,
+  chakra,
 } from '@chakra-ui/react';
+
 import { MdPhone, MdEmail, MdLocationOn, MdFacebook, MdOutlinePhone } from 'react-icons/md';
 import { BsPerson, BsWhatsapp, BsInstagram } from 'react-icons/bs';
+
 import { GMap } from '../components';
 
+import emailjs from '@emailjs/browser';
+
 const ContactForm = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  // Emailjs
+  const sendEmail = (): void => {
+    if (form.current)
+      emailjs
+        .sendForm(
+          `${process.env.REACT_APP_EMAILJS_SERVICE_ID}`,
+          `${process.env.REACT_APP_EMAILJS_TEMPLATE_ID}`,
+          form.current,
+          `${process.env.REACT_APP_EMAILJS_PUBLIC_KEY}`,
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          },
+        );
+  };
+
+  // Form validation
+  const [formData, setFormData] = useState({
+    user_name: '',
+    user_phone: '',
+    message: '',
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: name === 'user_phone' ? formatPhoneNumber(value) : value,
+    });
+  };
+
+  const formatPhoneNumber = (phoneNumber: string) => {
+    // Remove caracteres não numéricos do número de telefone
+    const cleaned = phoneNumber.replace(/\D/g, '');
+
+    // Formate o número de telefone (99) 99999-9999
+    if (cleaned.length === 11) {
+      const part1 = cleaned.slice(0, 2);
+      const part2 = cleaned.slice(2, 7);
+      const part3 = cleaned.slice(7, 11);
+      return `(${part1}) ${part2}-${part3}`;
+    }
+
+    return cleaned;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const validationErrors: Record<string, string> = {};
+
+    if (formData.user_name.length < 3) {
+      validationErrors.user_name = 'O nome deve ter pelo menos 3 letras';
+    }
+
+    if (formData.user_phone.replace(/\D/g, '').length < 11) {
+      validationErrors.user_phone = 'Digite o número de telefone completo com DDD';
+    }
+
+    if (formData.message.length < 3) {
+      validationErrors.message = 'A mensagem deve ter pelo menos 3 letras';
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      sendEmail();
+      console.log('Form data:', formData);
+
+      // Limpa o formulário
+      setFormData({
+        user_name: '',
+        user_phone: '',
+        message: '',
+      });
+    }
+  };
+
+  const brand: string = '#f4c827';
+
   return (
-    <Container bg='#EDF3F8' maxW='full' mt={0} centerContent overflow='hidden' p={5}>
+    <Container bg='gray.50' maxW='full' mt={0} centerContent overflow='hidden' p={5}>
       <Flex w={'full'}>
         <Box bg='white' color='black' borderRadius='lg' p={{ base: 5, md: 5, lg: 16 }} w={'full'}>
           <Box p={4}>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={[16, 8]}>
               <Box>
                 <Heading>Entre em Contato</Heading>
-                <Text mt={{ sm: 3, md: 3, lg: 5 }} color='gray.900' maxW='sm'>
+                <Text mt={{ sm: 3, md: 3, lg: 5 }} color='gray.900' maxW='sm' fontSize='md'>
                   Entre em contato conosco para fazer a sua CNH, contratar, tirar dúvidas, marcar
                   aulas, ou simplesmente para nos conhecer melhor. Estamos aqui para ajudar e fazer
                   da sua experiência na Autoescola Lider a melhor possível. Aguardamos o seu
                   contato!
                 </Text>
                 <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                  <VStack pl={0} spacing={3} alignItems='flex-start' color='black'>
+                  <VStack pl={0} spacing={3} alignItems='flex-start' color='gray.900'>
+                    <chakra.a href='tel:+5582994152914'>
+                      <Button
+                        size='md'
+                        height='48px'
+                        width='200px'
+                        variant='ghost'
+                        _hover={{ border: `2px solid ${brand}` }}
+                        leftIcon={<MdPhone color={brand} size='24px' />}>
+                        (82) 99415 2914
+                      </Button>
+                    </chakra.a>
                     <Button
                       size='md'
                       height='48px'
-                      width='200px'
+                      width='275px'
                       variant='ghost'
-                      _hover={{ border: '2px solid #1C6FEB' }}
-                      leftIcon={<MdPhone color='#1970F1' size='20px' />}>
-                      (82) 9 9415 2914
+                      _hover={{ border: `2px solid ${brand}` }}
+                      leftIcon={<MdEmail color={brand} size='24px' />}>
+                      cfclidercolonia@gmail.com
                     </Button>
                     <Button
                       size='md'
                       height='48px'
-                      width='200px'
+                      width='245px'
                       variant='ghost'
-                      _hover={{ border: '2px solid #1C6FEB' }}
-                      leftIcon={<MdEmail color='#1970F1' size='20px' />}>
-                      hello@abc.com
-                    </Button>
-                    <Button
-                      size='md'
-                      height='48px'
-                      width='250px'
-                      variant='ghost'
-                      _hover={{ border: '2px solid #1C6FEB' }}
-                      leftIcon={<MdLocationOn color='#1970F1' size='20px' />}>
+                      _hover={{ border: `2px solid ${brand}` }}
+                      leftIcon={<MdLocationOn color={brand} size='24px' />}>
                       Colônia Leopoldina, AL
                     </Button>
                   </VStack>
@@ -75,7 +171,7 @@ const ContactForm = () => {
                     variant='ghost'
                     size='lg'
                     isRound={true}
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: `${brand}` }}
                     icon={<MdFacebook size='30px' />}
                     cursor='pointer'
                   />
@@ -84,7 +180,7 @@ const ContactForm = () => {
                     variant='ghost'
                     size='lg'
                     isRound={true}
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: `${brand}` }}
                     icon={<BsInstagram size='28px' />}
                     cursor='pointer'
                   />
@@ -94,7 +190,7 @@ const ContactForm = () => {
                       variant='ghost'
                       size='lg'
                       isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
+                      _hover={{ bg: `${brand}` }}
                       icon={<BsWhatsapp size='28px' />}
                       cursor='pointer'
                     />
@@ -103,42 +199,72 @@ const ContactForm = () => {
               </Box>
 
               <Box bg='white' borderRadius='lg'>
-                <Box m={8} color='#0B0E3F'>
-                  <VStack spacing={5}>
-                    <FormControl id='name'>
-                      <FormLabel>Seu nome</FormLabel>
-                      <InputGroup borderColor='#E0E1E7'>
-                        <InputLeftElement pointerEvents='none'>
-                          <BsPerson color='gray.800' />
-                        </InputLeftElement>
-                        <Input type='text' size='md' />
-                      </InputGroup>
-                    </FormControl>
-                    <FormControl id='name'>
-                      <FormLabel>Telefone de contato</FormLabel>
-                      <InputGroup borderColor='#E0E1E7'>
-                        <InputLeftElement pointerEvents='none'>
-                          <MdOutlinePhone color='gray.800' />
-                        </InputLeftElement>
-                        <Input type='text' size='md' />
-                      </InputGroup>
-                    </FormControl>
-                    <FormControl id='name'>
-                      <FormLabel>Sobre qual serviço você quer sber mais?</FormLabel>
-                      <Textarea
-                        borderColor='gray.300'
-                        _hover={{
-                          borderRadius: 'gray.300',
-                        }}
-                        placeholder='Primeira Habilitação, Reciclagem, Aulas, etc...'
-                      />
-                    </FormControl>
-                    <FormControl id='name' float='right'>
-                      <Button variant='solid' bg='#0D74FF' color='white' _hover={{}}>
-                        Enviar
-                      </Button>
-                    </FormControl>
-                  </VStack>
+                <Box m={8} color='gray.900' fontSize='md'>
+                  <form ref={form} onSubmit={handleSubmit}>
+                    <VStack spacing={5}>
+                      <FormControl id='name'>
+                        <FormLabel>Seu nome</FormLabel>
+                        <InputGroup borderColor='gray.700'>
+                          <InputLeftElement pointerEvents='none'>
+                            <BsPerson color='gray.800' />
+                          </InputLeftElement>
+                          <Input
+                            name='user_name'
+                            type='text'
+                            size='md'
+                            placeholder='Nome Completo'
+                            focusBorderColor={brand}
+                            value={formData.user_name}
+                            onChange={handleChange}
+                          />
+                          {errors.name && <span style={{ color: 'red' }}>{errors.name}</span>}
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id='phone'>
+                        <FormLabel>Telefone de contato</FormLabel>
+                        <InputGroup borderColor='gray.700'>
+                          <InputLeftElement pointerEvents='none'>
+                            <MdOutlinePhone color='gray.800' />
+                          </InputLeftElement>
+                          <Input
+                            name='user_phone'
+                            size='md'
+                            placeholder='(99) 99999-9999'
+                            type='text'
+                            focusBorderColor={brand}
+                            value={formData.user_phone}
+                            onChange={handleChange}
+                          />
+                          {errors.phone && <span style={{ color: 'red' }}>{errors.phone}</span>}
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id='message'>
+                        <FormLabel>Sobre qual serviço você quer saber mais?</FormLabel>
+                        <Textarea
+                          name='message'
+                          value={formData.message}
+                          onChange={handleChange}
+                          borderColor='gray.600'
+                          _hover={{
+                            borderRadius: 'gray.300',
+                          }}
+                          placeholder='Primeira Habilitação, Reciclagem, Aulas, etc...'
+                          focusBorderColor={brand}
+                        />
+                        {errors.message && <span style={{ color: 'red' }}>{errors.message}</span>}
+                      </FormControl>
+                      <FormControl float='right'>
+                        <Button
+                          variant='solid'
+                          bg='gray.900'
+                          color='white'
+                          _hover={{ bg: `${brand}` }}
+                          type='submit'>
+                          Enviar
+                        </Button>
+                      </FormControl>
+                    </VStack>
+                  </form>
                 </Box>
               </Box>
 

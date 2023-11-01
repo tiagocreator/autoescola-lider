@@ -104,7 +104,6 @@ const ContactForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       sendEmail();
-      console.log('Form data:', formData);
 
       // Limpa o formulário
       setFormData({
@@ -113,6 +112,21 @@ const ContactForm = () => {
         message: '',
       });
     }
+  };
+
+  // Botão de chamada
+  const phoneNumber: string = '+5582994152914';
+  const handleCallButtonClick = () => {
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
+  // Botão de email
+  const email: string = 'cfclidercolonia@gmail.com';
+  const subject: string = 'Olá%20equípe%20da%20Autoescola%20Líder!';
+  const body: string = 'Escreva%20sua%20mensagem...';
+  const handleEmailButtonClick = () => {
+    const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
   };
 
   const brand: string = '#f4c827';
@@ -133,24 +147,25 @@ const ContactForm = () => {
                 </Text>
                 <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                   <VStack pl={0} spacing={3} alignItems='flex-start' color='gray.900'>
-                    <chakra.a href='tel:+5582994152914'>
-                      <Button
-                        size='md'
-                        height='48px'
-                        width='200px'
-                        variant='ghost'
-                        _hover={{ border: `2px solid ${brand}` }}
-                        leftIcon={<MdPhone color={brand} size='24px' />}>
-                        (82) 99415 2914
-                      </Button>
-                    </chakra.a>
+                    <Button
+                      size='md'
+                      height='48px'
+                      width='200px'
+                      variant='ghost'
+                      _hover={{ border: `2px solid ${brand}` }}
+                      leftIcon={<MdPhone color={brand} size='24px' />}
+                      onClick={handleCallButtonClick}>
+                      (82) 99415 2914
+                    </Button>
+
                     <Button
                       size='md'
                       height='48px'
                       width='275px'
                       variant='ghost'
                       _hover={{ border: `2px solid ${brand}` }}
-                      leftIcon={<MdEmail color={brand} size='24px' />}>
+                      leftIcon={<MdEmail color={brand} size='24px' />}
+                      onClick={handleEmailButtonClick}>
                       cfclidercolonia@gmail.com
                     </Button>
                     <Button
@@ -202,8 +217,17 @@ const ContactForm = () => {
                 <Box m={8} color='gray.900' fontSize='md'>
                   <form ref={form} onSubmit={handleSubmit}>
                     <VStack spacing={5}>
-                      <FormControl id='name'>
-                        <FormLabel>Seu nome</FormLabel>
+                      <FormControl id='user_name'>
+                        <FormLabel>
+                          {errors.user_name ? (
+                            <chakra.span color='red.500' fontSize={'md'}>
+                              *{' '}
+                            </chakra.span>
+                          ) : (
+                            ''
+                          )}
+                          Seu nome
+                        </FormLabel>
                         <InputGroup borderColor='gray.700'>
                           <InputLeftElement pointerEvents='none'>
                             <BsPerson color='gray.800' />
@@ -217,11 +241,24 @@ const ContactForm = () => {
                             value={formData.user_name}
                             onChange={handleChange}
                           />
-                          {errors.name && <span style={{ color: 'red' }}>{errors.name}</span>}
                         </InputGroup>
+                        <Text>
+                          {errors.user_name && (
+                            <chakra.span color='red.500'>{errors.user_name}</chakra.span>
+                          )}
+                        </Text>
                       </FormControl>
-                      <FormControl id='phone'>
-                        <FormLabel>Telefone de contato</FormLabel>
+                      <FormControl id='user_phone'>
+                        <FormLabel>
+                          {errors.user_phone ? (
+                            <chakra.span color='red.500' fontSize={'md'}>
+                              *{' '}
+                            </chakra.span>
+                          ) : (
+                            ''
+                          )}
+                          Telefone de contato
+                        </FormLabel>
                         <InputGroup borderColor='gray.700'>
                           <InputLeftElement pointerEvents='none'>
                             <MdOutlinePhone color='gray.800' />
@@ -235,11 +272,24 @@ const ContactForm = () => {
                             value={formData.user_phone}
                             onChange={handleChange}
                           />
-                          {errors.phone && <span style={{ color: 'red' }}>{errors.phone}</span>}
                         </InputGroup>
+                        <Text>
+                          {errors.user_phone && (
+                            <chakra.span color='red.500'>{errors.user_phone}</chakra.span>
+                          )}
+                        </Text>
                       </FormControl>
                       <FormControl id='message'>
-                        <FormLabel>Sobre qual serviço você quer saber mais?</FormLabel>
+                        <FormLabel>
+                          {errors.message ? (
+                            <chakra.span color='red.500' fontSize={'md'}>
+                              *{' '}
+                            </chakra.span>
+                          ) : (
+                            ''
+                          )}
+                          Sobre qual serviço você quer saber mais?
+                        </FormLabel>
                         <Textarea
                           name='message'
                           value={formData.message}
@@ -251,7 +301,11 @@ const ContactForm = () => {
                           placeholder='Primeira Habilitação, Reciclagem, Aulas, etc...'
                           focusBorderColor={brand}
                         />
-                        {errors.message && <span style={{ color: 'red' }}>{errors.message}</span>}
+                        <Text>
+                          {errors.message && (
+                            <chakra.span color='red.500'>{errors.message}</chakra.span>
+                          )}
+                        </Text>
                       </FormControl>
                       <FormControl float='right'>
                         <Button

@@ -3,6 +3,8 @@ import { chakra, Box, Image, Link as ChakraLink, Flex, HStack, VStack } from '@c
 
 import { Feature } from '../components';
 
+import { priceData } from '../priceData';
+
 const motorcycleCategory: string = require('../assets/img/motorcycle-cat.png');
 const carCategory: string = require('../assets/img/car-cat.png');
 const dualCategory: string = require('../assets/img/dual-cat.png');
@@ -47,18 +49,13 @@ const Categories = () => {
               shadow='xl'>
               <chakra.span fontSize='3xl' fontWeight='bold'>
                 Categoria A
-                <chakra.p
-                  alignSelf='center'
-                  fontSize='2xl'
-                  _light={{
-                    color: 'gray.300',
-                  }}>
-                  De R$1500 por
+                <chakra.p alignSelf='center' fontSize='3xl' color='gray.600'>
+                  {priceData.catA.price}
                 </chakra.p>
               </chakra.span>
               <HStack spacing={3}>
-                <chakra.span fontWeight='bold' fontSize='5xl' textShadow='2px 0 currentcolor'>
-                  R$1200
+                <chakra.span fontWeight='bold' fontSize='4xl' textShadow='1px 0 currentcolor'>
+                  {priceData.catA.divided}
                 </chakra.span>
               </HStack>
             </VStack>
@@ -138,18 +135,13 @@ const Categories = () => {
               shadow='xl'>
               <chakra.span fontSize='3xl' fontWeight='bold'>
                 Categoria AB
-                <chakra.p
-                  alignSelf='center'
-                  fontSize='2xl'
-                  _light={{
-                    color: 'gray.300',
-                  }}>
-                  De R$2500 por
+                <chakra.p alignSelf='center' fontSize='3xl' color='gray.600'>
+                  {priceData.catAB.price}
                 </chakra.p>
               </chakra.span>
               <HStack spacing={3}>
-                <chakra.span fontWeight='bold' fontSize='5xl' textShadow='2px 0 currentcolor'>
-                  R$1800
+                <chakra.span fontWeight='bold' fontSize='4xl' textShadow='1px 0 currentcolor'>
+                  {priceData.catAB.divided}
                 </chakra.span>
               </HStack>
             </VStack>
@@ -220,18 +212,13 @@ const Categories = () => {
               shadow='xl'>
               <chakra.span fontSize='3xl' fontWeight='bold'>
                 Categoria B
-                <chakra.p
-                  alignSelf='center'
-                  fontSize='2xl'
-                  _light={{
-                    color: 'gray.300',
-                  }}>
-                  De R$1800 por
+                <chakra.p alignSelf='center' fontSize='3xl' color='gray.600'>
+                  {priceData.catB.price}
                 </chakra.p>
               </chakra.span>
               <HStack spacing={3}>
-                <chakra.span fontWeight='bold' fontSize='5xl' textShadow='2px 0 currentcolor'>
-                  R$1500
+                <chakra.span fontWeight='bold' fontSize='4xl' textShadow='1px 0 currentcolor'>
+                  {priceData.catB.divided}
                 </chakra.span>
               </HStack>
             </VStack>

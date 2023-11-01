@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 
-import { Link as ReactLink } from 'react-router-dom';
 import {
   Container,
   Flex,
@@ -18,7 +17,6 @@ import {
   InputLeftElement,
   Textarea,
   SimpleGrid,
-  Link as ChakraLink,
   chakra,
 } from '@chakra-ui/react';
 
@@ -33,9 +31,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
-  const form = useRef<HTMLFormElement | null>(null);
+  const instagramProfile: string = 'https://www.instagram.com/lidercolonia/';
+  const whatsappProfile: string = 'https://wa.me/5582994152914';
 
   // Emailjs
+  const form = useRef<HTMLFormElement | null>(null);
   const sendEmail = (): void => {
     if (form.current)
       emailjs
@@ -207,6 +207,10 @@ const ContactForm = () => {
                       cursor='pointer'
                     />
                     <IconButton
+                      as='a'
+                      href={instagramProfile}
+                      target='_blank'
+                      rel='noopener noreferrer'
                       aria-label='instagram'
                       variant='ghost'
                       size='lg'
@@ -215,17 +219,20 @@ const ContactForm = () => {
                       icon={<BsInstagram size='28px' />}
                       cursor='pointer'
                     />
-                    <ChakraLink as={ReactLink} to='https://wa.me/5582994152914'>
-                      <IconButton
-                        aria-label='whatsapp'
-                        variant='ghost'
-                        size='lg'
-                        isRound={true}
-                        _hover={{ bg: `${brand}` }}
-                        icon={<BsWhatsapp size='28px' />}
-                        cursor='pointer'
-                      />
-                    </ChakraLink>
+
+                    <IconButton
+                      as='a'
+                      href={whatsappProfile}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label='whatsapp'
+                      variant='ghost'
+                      size='lg'
+                      isRound={true}
+                      _hover={{ bg: `${brand}` }}
+                      icon={<BsWhatsapp size='28px' />}
+                      cursor='pointer'
+                    />
                   </HStack>
                 </Box>
 

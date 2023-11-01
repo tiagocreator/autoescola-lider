@@ -11,10 +11,9 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 const Footer = () => {
-  const bg = 'white';
-
+  const instagramProfile: string = 'https://www.instagram.com/lidercolonia/';
   return (
-    <Box bg={bg} color='brand.500' shadow='dark-lg'>
+    <Box bg='white' color='gray.900' shadow='dark-lg'>
       <Container
         as={Stack}
         maxW={'full'}
@@ -58,7 +57,7 @@ const Footer = () => {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Redes Sociais</ListHeader>
-            <Box as='a' href={'#'}>
+            <Box as='a' href={instagramProfile} target='_blank' rel='noopener noreferrer'>
               Instagram
             </Box>
             <Box as='a' href={'#'}>

@@ -150,7 +150,7 @@ const ContactForm = () => {
       />
       <Container bg='gray.50' maxW='full' mt={0} centerContent overflow='hidden' p={5}>
         <Flex w={'full'}>
-          <Box bg='white' color='black' borderRadius='lg' p={{ base: 5, md: 5, lg: 16 }} w={'full'}>
+          <Box bg='white' color='black' borderRadius='lg' p={{ base: 1, md: 5, lg: 16 }} w={'full'}>
             <Box p={4}>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={[16, 8]}>
                 <Box>

@@ -1,5 +1,6 @@
 import { Box, Flex, SimpleGrid, Text, chakra } from '@chakra-ui/react';
 import { Feature, ServiceBox } from '../components';
+import { priceData } from '../priceData';
 
 const motorcycleCategory: string = require('../assets/img/motorcycle-cat.png');
 const carCategory: string = require('../assets/img/car-cat.png');
@@ -24,7 +25,8 @@ const AllServices = () => {
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={[16, 8]}>
             <ServiceBox
               title={'Categoria A'}
-              price={1200}
+              price={priceData.catA.price}
+              divided={priceData.catA.divided}
               feature={
                 <>
                   <Feature children={'Motos, motonetas e triciclos '} />
@@ -37,7 +39,8 @@ const AllServices = () => {
 
             <ServiceBox
               title={'Categoria B'}
-              price={1500}
+              price={priceData.catB.price}
+              divided={priceData.catB.divided}
               feature={
                 <>
                   <Feature
@@ -54,7 +57,8 @@ const AllServices = () => {
 
             <ServiceBox
               title={'Categoria AB'}
-              price={1800}
+              price={priceData.catAB.price}
+              divided={priceData.catAB.divided}
               feature={
                 <>
                   <Feature children={'Versatilidade no Trânsito'} />
@@ -96,6 +100,7 @@ const AllServices = () => {
 
             <ServiceBox
               title={'Reciclagem'}
+              price={priceData.recycle.price}
               feature={
                 <>
                   <Feature children={'Reabilitação e recuperação de CHN'} />

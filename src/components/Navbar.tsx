@@ -77,6 +77,8 @@ const Navbar = () => {
               <Button variant='ghost'>Contato</Button>
             </ChakraLink>
           </HStack>
+
+          {/* Mobile menu */}
           <Box
             display={{
               base: 'inline-flex',
@@ -94,7 +96,6 @@ const Navbar = () => {
               icon={<AiOutlineMenu />}
               onClick={mobileNav.onOpen}
             />
-
             <VStack
               pos='absolute'
               top={0}
@@ -112,27 +113,27 @@ const Navbar = () => {
               <CloseButton aria-label='fechar menu' onClick={mobileNav.onClose} fontSize='18px' />
 
               <ChakraLink as={ReactLink} to='/'>
-                <Button w='full' variant='ghost'>
+                <Button w='full' variant='ghost' onClick={mobileNav.onClose}>
                   Página Inicial
                 </Button>
               </ChakraLink>
               <ChakraLink as={ReactLink} to='sobre'>
-                <Button w='full' variant='ghost'>
+                <Button w='full' variant='ghost' onClick={mobileNav.onClose}>
                   Quem Somos
                 </Button>
               </ChakraLink>
               <ChakraLink as={ReactLink} to='servicos'>
-                <Button w='full' variant='ghost'>
+                <Button w='full' variant='ghost' onClick={mobileNav.onClose}>
                   Serviços
                 </Button>
               </ChakraLink>
               <ChakraLink as={ReactLink} to='avaliacoes'>
-                <Button w='full' variant='ghost'>
+                <Button w='full' variant='ghost' onClick={mobileNav.onClose}>
                   Testemunhas
                 </Button>
               </ChakraLink>
               <ChakraLink as={ReactLink} to='contato'>
-                <Button w='full' variant='ghost'>
+                <Button w='full' variant='ghost' onClick={mobileNav.onClose}>
                   Contato
                 </Button>
               </ChakraLink>

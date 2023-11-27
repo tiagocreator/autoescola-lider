@@ -30,7 +30,7 @@ const Navbar = () => {
         base: 2,
         sm: 4,
       }}
-      py={6}
+      py={3}
       shadow='md'
       position='relative'
       zIndex={2}>
@@ -45,7 +45,7 @@ const Navbar = () => {
             <Image
               src={logo}
               alt='logo'
-              h={{ base: 8, md: 12 }}
+              h={{ base: 10, md: 16 }}
               fit='cover'
               loading='lazy'
               m='auto'

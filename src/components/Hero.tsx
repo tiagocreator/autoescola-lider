@@ -1,6 +1,6 @@
 import { Stack, Flex, Text, VStack, useBreakpointValue } from '@chakra-ui/react';
 
-const heroBg: string = require('../assets/img/hero-bg.jpg');
+const heroBg: string = require('../assets/img/hero-bg.webp');
 
 interface Props {
   title: string;

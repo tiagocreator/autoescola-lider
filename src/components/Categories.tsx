@@ -5,9 +5,9 @@ import { Feature } from '../components';
 
 import { priceData } from '../priceData';
 
-const motorcycleCategory: string = require('../assets/img/motorcycle-cat.png');
-const carCategory: string = require('../assets/img/car-cat.png');
-const dualCategory: string = require('../assets/img/dual-cat.png');
+const motorcycleCategory: string = require('../assets/img/motorcycle-cat.webp');
+const carCategory: string = require('../assets/img/car-cat.webp');
+const dualCategory: string = require('../assets/img/dual-cat.webp');
 
 const Categories = () => {
   const brand: string = '#f4c827';

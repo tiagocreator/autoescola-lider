@@ -15,7 +15,7 @@ import {
 
 import { AiOutlineMenu } from 'react-icons/ai';
 
-const logo: string = require('../assets/img/logo.png');
+const logo: string = require('../assets/img/logo.webp');
 
 const Navbar = () => {
   const bg = '#fff';

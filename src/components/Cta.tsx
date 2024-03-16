@@ -3,7 +3,7 @@ import { Box, Flex, Icon, Image, Link as ChakraLink, SimpleGrid, chakra } from '
 
 import { FiExternalLink } from 'react-icons/fi';
 
-const ctaBg: string = require('../assets/img/cta-bg.jpg');
+const ctaBg: string = require('../assets/img/cta-bg.webp');
 
 const Cta = () => {
   const brand: string = '#f4c827';

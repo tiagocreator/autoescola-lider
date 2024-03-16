@@ -1,8 +1,8 @@
 import { Link as ReactLink } from 'react-router-dom';
 import { Box, Button, Flex, Image, SimpleGrid, chakra, Link as ChakraLink } from '@chakra-ui/react';
 
-const company: string = require('../assets/img/company.jpg');
-const students: string = require('../assets/img/students.jpg');
+const company: string = require('../assets/img/company.webp');
+const students: string = require('../assets/img/students.webp');
 
 const CompanyInfo = () => {
   const brand: string = '#f4c827';

@@ -2,26 +2,26 @@ import { Box, Flex, Image, SimpleGrid, Text, chakra } from '@chakra-ui/react';
 
 import { Stars } from '../components';
 
-const review_1: string = require('../assets/img/reviews/rev-1.jpeg');
-const review_2: string = require('../assets/img/reviews/rev-2.jpeg');
-const review_3: string = require('../assets/img/reviews/rev-3.jpeg');
-const review_4: string = require('../assets/img/reviews/rev-4.jpeg');
-const review_5: string = require('../assets/img/reviews/rev-5.jpeg');
-const review_6: string = require('../assets/img/reviews/rev-6.jpeg');
-const review_7: string = require('../assets/img/reviews/rev-7.jpeg');
-const review_8: string = require('../assets/img/reviews/rev-8.jpeg');
-const review_9: string = require('../assets/img/reviews/rev-9.jpeg');
-const review_10: string = require('../assets/img/reviews/rev-10.jpeg');
-const review_11: string = require('../assets/img/reviews/rev-11.jpeg');
-const review_12: string = require('../assets/img/reviews/rev-12.jpeg');
-const review_13: string = require('../assets/img/reviews/rev-13.jpeg');
-const review_14: string = require('../assets/img/reviews/rev-14.jpeg');
-const review_15: string = require('../assets/img/reviews/rev-15.jpeg');
-const review_16: string = require('../assets/img/reviews/rev-16.jpeg');
-const review_17: string = require('../assets/img/reviews/rev-17.jpeg');
-const review_18: string = require('../assets/img/reviews/rev-18.jpeg');
-const review_19: string = require('../assets/img/reviews/rev-19.jpeg');
-const review_20: string = require('../assets/img/reviews/rev-20.jpeg');
+const review_1: string = require('../assets/img/reviews/rev-1.webp');
+const review_2: string = require('../assets/img/reviews/rev-2.webp');
+const review_3: string = require('../assets/img/reviews/rev-3.webp');
+const review_4: string = require('../assets/img/reviews/rev-4.webp');
+const review_5: string = require('../assets/img/reviews/rev-5.webp');
+const review_6: string = require('../assets/img/reviews/rev-6.webp');
+const review_7: string = require('../assets/img/reviews/rev-7.webp');
+const review_8: string = require('../assets/img/reviews/rev-8.webp');
+const review_9: string = require('../assets/img/reviews/rev-9.webp');
+const review_10: string = require('../assets/img/reviews/rev-10.webp');
+const review_11: string = require('../assets/img/reviews/rev-11.webp');
+const review_12: string = require('../assets/img/reviews/rev-12.webp');
+const review_13: string = require('../assets/img/reviews/rev-13.webp');
+const review_14: string = require('../assets/img/reviews/rev-14.webp');
+const review_15: string = require('../assets/img/reviews/rev-15.webp');
+const review_16: string = require('../assets/img/reviews/rev-16.webp');
+const review_17: string = require('../assets/img/reviews/rev-17.webp');
+const review_18: string = require('../assets/img/reviews/rev-18.webp');
+const review_19: string = require('../assets/img/reviews/rev-19.webp');
+const review_20: string = require('../assets/img/reviews/rev-20.webp');
 
 interface ReviewData {
   img?: string;

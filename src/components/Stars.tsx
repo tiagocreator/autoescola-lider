@@ -1,7 +1,7 @@
 import { chakra, Image } from '@chakra-ui/react';
 import React from 'react';
 
-const star: string = require('../assets/img/star.png');
+const star: string = require('../assets/img/star.webp');
 
 interface Props {
   starW: string;

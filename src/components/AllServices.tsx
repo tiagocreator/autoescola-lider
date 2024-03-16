@@ -2,12 +2,12 @@ import { Box, Flex, SimpleGrid, Text, chakra } from '@chakra-ui/react';
 import { Feature, ServiceBox } from '../components';
 import { priceData } from '../priceData';
 
-const motorcycleCategory: string = require('../assets/img/motorcycle-cat.png');
-const carCategory: string = require('../assets/img/car-cat.png');
-const dualCategory: string = require('../assets/img/dual-cat.png');
-const addCategory: string = require('../assets/img/add-cat.png');
-const privateLessons: string = require('../assets/img/private-lessons.png');
-const recycle: string = require('../assets/img/recycle.png');
+const motorcycleCategory: string = require('../assets/img/motorcycle-cat.webp');
+const carCategory: string = require('../assets/img/car-cat.webp');
+const dualCategory: string = require('../assets/img/dual-cat.webp');
+const addCategory: string = require('../assets/img/add-cat.webp');
+const privateLessons: string = require('../assets/img/private-lessons.webp');
+const recycle: string = require('../assets/img/recycle.webp');
 
 const AllServices = () => {
   return (

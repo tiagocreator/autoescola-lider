@@ -5,7 +5,7 @@ const company: string = require('../assets/img/company.webp');
 const students: string = require('../assets/img/students.webp');
 
 const CompanyInfo = () => {
-  const brand: string = '#f4c827';
+  const brand: string = '#065D93';
 
   return (
     <Flex bg='gray.50' p={5} w='full' justifyContent='center' alignItems='center'>

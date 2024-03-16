@@ -4,7 +4,7 @@ import { chakra, Box, Image, Icon, Link as ChakraLink } from '@chakra-ui/react';
 const mainHeroBg: string = require('../assets/img/main-hero-bg.webp');
 
 const MainHero = () => {
-  const brand: string = '#f4c827';
+  const brand: string = '#065D93';
 
   return (
     <Box pos='relative' overflow='hidden' bg='white' zIndex={1}>

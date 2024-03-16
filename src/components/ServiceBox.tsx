@@ -11,7 +11,7 @@ interface Props {
   imgW: string;
 }
 
-const brand: string = '#f4c827';
+const brand: string = '#065D93';
 
 const ServiceBox: React.FC<Props> = (props) => {
   return (

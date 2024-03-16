@@ -10,7 +10,7 @@ const carCategory: string = require('../assets/img/car-cat.webp');
 const dualCategory: string = require('../assets/img/dual-cat.webp');
 
 const Categories = () => {
-  const brand: string = '#f4c827';
+  const brand: string = '#065D93';
 
   return (
     <Flex bg='gray.50' p={5} w='full' justifyContent='center' alignItems='center'>

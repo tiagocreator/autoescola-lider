@@ -1,13 +1,20 @@
 import { Link as ReactLink } from 'react-router-dom';
 import { chakra, Box, Image, Icon, Link as ChakraLink } from '@chakra-ui/react';
-
-const mainHeroBg: string = require('../assets/img/main-hero-bg.webp');
+import { useState } from 'react';
 
 const MainHero = () => {
   const brand: string = '#065D93';
+  const mainHeroBg: string = require('../assets/img/main-hero-bg.webp');
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
   return (
     <Box pos='relative' overflow='hidden' bg='white' zIndex={1}>
+      <img src={mainHeroBg} alt='' style={{ display: 'none' }} onLoad={handleImageLoad} />
       <Box maxW='7xl' mx='auto'>
         <Box
           pos='relative'
@@ -202,32 +209,27 @@ const MainHero = () => {
           </Box>
         </Box>
       </Box>
-      <Box
-        position={{
-          lg: 'absolute',
-        }}
-        top={{
-          lg: 0,
-        }}
-        bottom={{
-          lg: 0,
-        }}
-        right={{
-          lg: 0,
-        }}
-        w={{
-          lg: '50%',
-        }}
-        border='solid 1px transparent'>
-        <Image
-          h={[56, 72, 96, 'full']}
-          w='full'
-          fit='cover'
-          src={mainHeroBg}
-          alt=''
-          loading='lazy'
-        />
-      </Box>
+      {imageLoaded && (
+        <Box
+          position={{
+            lg: 'absolute',
+          }}
+          top={{
+            lg: 0,
+          }}
+          bottom={{
+            lg: 0,
+          }}
+          right={{
+            lg: 0,
+          }}
+          w={{
+            lg: '50%',
+          }}
+          border='solid 1px transparent'>
+          <Image h={[56, 72, 96, 'full']} w='full' fit='cover' src={mainHeroBg} alt='' />
+        </Box>
+      )}
     </Box>
   );
 };

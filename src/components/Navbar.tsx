@@ -46,8 +46,8 @@ const Navbar = () => {
               src={logo}
               alt='logo'
               h={{ base: 10, md: 16 }}
+              w="fit-content"
               fit='cover'
-              loading='lazy'
               m='auto'
             />
           </ChakraLink>

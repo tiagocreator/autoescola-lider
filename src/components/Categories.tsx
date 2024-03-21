@@ -69,7 +69,7 @@ const Categories = () => {
               <VStack spacing={4} w='full' direction='column' alignItems='start'>
                 <Image
                   h='90%'
-                  w='auto'
+                  w='48%'
                   fit='cover'
                   src={motorcycleCategory}
                   alt=''
@@ -149,7 +149,7 @@ const Categories = () => {
               <VStack spacing={4} w='full' direction='column' alignItems='start'>
                 <Image
                   h='80%'
-                  w='auto'
+                  w='48%'
                   fit='cover'
                   src={dualCategory}
                   alt=''

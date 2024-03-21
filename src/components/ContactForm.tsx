@@ -132,7 +132,7 @@ const ContactForm = () => {
     window.location.href = mailtoLink;
   };
 
-  const brand: string = '#f4c827';
+  const brand: string = '#065D93';
 
   return (
     <>

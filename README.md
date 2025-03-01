@@ -1,6 +1,6 @@
 ## Autoescola Líder
 
-### :computer: [Link do Site](https://www.autoescolalider.site/)
+### :computer: [Link do Site](https://autoescolalider.vercel.app/)
 
 ---
 
@@ -66,4 +66,4 @@ Se você tiver uma sugestão para melhorar o projeto, faça um fork do repositó
 
 ---
 
-### :computer: [Link do Site](https://www.autoescolalider.site/)
+### :computer: [Link do Site](https://autoescolalider.vercel.app/)
